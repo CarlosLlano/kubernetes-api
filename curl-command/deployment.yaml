@@ -1,0 +1,15 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: centosapp
+spec:
+  replicas: 1 
+  template: 
+    metadata:
+      labels:
+        app: centosapp
+    spec:
+      containers:
+      - name: centosapp
+        image: "registry.ng.bluemix.net/dakar9499ns/centospod:0.0.1"
+        imagePullPolicy: Always

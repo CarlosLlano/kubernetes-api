@@ -1,0 +1,17 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: pythonapp
+spec:
+  replicas: 1
+  template: 
+    metadata:
+      labels:
+        app: pythonapp
+    spec:
+      containers:
+      - name: pythonapp
+        image: "registry.ng.bluemix.net/dakar9499ns/pythonapp:0.0.1"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
